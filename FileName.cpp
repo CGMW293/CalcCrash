@@ -11,7 +11,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         LPWSTR calcPtr = new wchar_t[MAX_PATH];//why cant i just use a string?
         wcscpy_s(calcPtr, MAX_PATH, L"C:\\Windows\\System32\\calc.exe");
         CreateProcessW(NULL, calcPtr, NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &si, &pi);   
-        delete[] calcPtr;
+        delete[] calcPtr; //is this even important when your trying to take up memory?
     }
     return 0;
 }
